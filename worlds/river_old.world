@@ -36,6 +36,47 @@
       <direction>-0.3 -0.3 -1</direction>
       <cast_shadows>0</cast_shadows>
     </light>
+    <model name='ocean'>
+      <static>1</static>
+      <link name='ocean_link'>
+        <visual name='ocean_surface'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <mesh>
+              <uri>file://Media/models/sea_surface_1000m_x_1000m.dae</uri>
+              <scale>0.04 0.04 0.04</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://Media/materials/scripts/waves.material</uri>
+              <name>UUVSimulator/SimpleWaves</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='ocean_below'>
+          <pose frame=''>0 0 0 3.14 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <mesh>
+              <uri>file://Media/models/sea_surface_1000m_x_1000m.dae</uri>
+              <scale>0.04 0.04 0.04</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://Media/materials/scripts/water.material</uri>
+              <name>UUVSimulator/StaticWater</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+    </model>
     <plugin name='underwater_current_plugin' filename='libuuv_underwater_current_ros_plugin.so'>
       <namespace>hydrodynamics</namespace>
       <constant_current>
@@ -76,10 +117,10 @@
     <atmosphere type='adiabatic'/>
     <wind/>
     <state world_name='ocean_surface'>
-      <sim_time>1884 834000000</sim_time>
-      <real_time>81 184654276</real_time>
-      <wall_time>1614324551 27642905</wall_time>
-      <iterations>40218</iterations>
+      <sim_time>1804 398000000</sim_time>
+      <real_time>359 236744158</real_time>
+      <wall_time>1612778690 674345500</wall_time>
+      <iterations>178533</iterations>
       <model name='House 1'>
         <pose frame=''>11.1154 -7.18277 -2.9745 0 0 -1.60936</pose>
         <scale>0.95 0.95 0.95</scale>
@@ -145,6 +186,16 @@
         <scale>1 1 2</scale>
         <link name='link'>
           <pose frame=''>4.15657 19.7119 0 0 -1.5218 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ocean'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='ocean_link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -261,7 +312,7 @@
           <geometry>
             <mesh>
               <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>0.9 0.9 0.9</scale>
+              <scale>1.5 1.5 1.5</scale>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -282,7 +333,7 @@
           <geometry>
             <mesh>
               <uri>model://house_3/meshes/house_3.dae</uri>
-              <scale>0.9 0.9 0.9</scale>
+              <scale>1.5 1.5 1.5</scale>
             </mesh>
           </geometry>
           <material>
@@ -421,7 +472,6 @@
           <geometry>
             <mesh>
               <uri>model://oak_tree/meshes/oak_tree.dae</uri>
-              <scale>1 1 2</scale>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -445,7 +495,6 @@
               <submesh>
                 <name>Branch</name>
               </submesh>
-              <scale>1 1 2</scale>
             </mesh>
           </geometry>
           <material>
@@ -463,7 +512,6 @@
               <submesh>
                 <name>Bark</name>
               </submesh>
-              <scale>1 1 2</scale>
             </mesh>
           </geometry>
           <material>
@@ -487,7 +535,6 @@
           <geometry>
             <mesh>
               <uri>model://oak_tree/meshes/oak_tree.dae</uri>
-              <scale>1 1 2</scale>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -511,7 +558,6 @@
               <submesh>
                 <name>Branch</name>
               </submesh>
-              <scale>1 1 2</scale>
             </mesh>
           </geometry>
           <material>
@@ -529,7 +575,6 @@
               <submesh>
                 <name>Bark</name>
               </submesh>
-              <scale>1 1 2</scale>
             </mesh>
           </geometry>
           <material>
