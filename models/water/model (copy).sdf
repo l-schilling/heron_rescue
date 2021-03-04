@@ -16,7 +16,7 @@
 -->
 <sdf version="1.4">
 
-<model name="ocean">
+<model name="water">
   <static>true</static>
   <link name="ocean_link">
 
@@ -26,7 +26,7 @@
     <geometry>
       <mesh>
         <uri>file://Media/models/sea_surface_1000m_x_1000m.dae</uri>
-        <scale>2 2 2</scale>
+        <scale>0.1 0.1 0.1</scale>
       </mesh>
     </geometry>
     <material>
@@ -43,7 +43,7 @@
     <geometry>
       <mesh>
         <uri>file://Media/models/sea_surface_1000m_x_1000m.dae</uri>
-        <scale>2 2 2</scale>
+        <scale>0.1 0.1 0.1</scale>
       </mesh>
     </geometry>
     <material>
@@ -53,34 +53,6 @@
       </script>
     </material>
   </visual>
-
-  <visual name="seafloor">
-    <cast_shadows>false</cast_shadows>
-    <pose>0 0 -100 0 0 0</pose>
-    <geometry>
-      <box>
-        <size>2000 2000 .1</size>
-      </box>
-    </geometry>
-    <material>
-      <script>
-        <uri>file://Media/materials/scripts/sand.material</uri>
-        <name>UUVSimulator/SandAndStones</name>
-      </script>
-      <emissive>
-        0.6 0.6 0.6 1.0
-      </emissive>
-    </material>
-  </visual>
-
-  <collision name="seafloor">
-    <pose>0 0 -100 0 0 0</pose>
-    <geometry>
-      <box>
-        <size>2000 2000 .1</size>
-      </box>
-    </geometry>
-  </collision>
 
   <visual name="north">
     <pose>1000 0 -50 0 -1.5708 0</pose>

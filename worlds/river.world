@@ -1,15 +1,7 @@
 <sdf version='1.6'>
   <world name='river_world'>
 
-    <!-- Add a ground plane -->
-    <include>
-        <uri>model://ground_plane</uri>
-        <material>
-            <script>
-                <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-        </material>
-    </include>
+
     
     <!-- Global light source -->
     <include>
@@ -25,45 +17,73 @@
     <!-- Fire truck -->
     <include>
       <uri>model://fire_truck</uri>
-      <pose>-17.7493 14.3992 7.7 0 0 -0.149719</pose>
+      <pose>-17.7493 14.3992 1.2 0 0 -0.149719</pose>
     </include>
 
     <!-- House_1 -->
     <include>
       <uri>model://house_1</uri>
-      <pose>11.1154 -7.18277 3 0 0 -1.60936</pose>
+      <pose>11.1154 -7.18277 -3.5 0 0 -1.60936</pose>
     </include>
 
     <!-- House_2 -->
     <include>
       <uri>model://house_2</uri>
-      <pose>-11.3821 -5.3436 3 0.005606 0.000642 -1.57534</pose>
+      <pose>-11.3821 -5.3436 -3.5 0.005606 0.000642 -1.57534</pose>
     </include>
 
     <!-- House_3 -->
     <include>
       <uri>model://house_3</uri>
-      <pose>10.1807 9.39456 3 0 -0 1.55785</pose>
+      <pose>10.1807 9.39456 -3.5 0 -0 1.55785</pose>
     </include>
 
     <!-- Oaktree 1 -->
     <include>
       <uri>model://oak_tree</uri>
       <name>oak_tree_1</name>
-      <pose>3.72931 -19.8045 7 0 -1.5218 0</pose>
+      <pose>4.15657 -19.8045 0 0 -1.5218 0</pose>
     </include>  
 
     <!-- Oaktree 2 -->
     <include>
       <uri>model://oak_tree</uri>
       <name>oak_tree_2</name>
-      <pose>4.15657 19.7119 7 0 -1.5218 0</pose>
+      <pose>4.15657 19.7119 0 0 -1.5218 0</pose>
     </include>  
 
     <include>
-      <uri>model://ocean</uri>
-      <pose>0 0 6 0 -0 0</pose>
-    </include>  
+      <uri>model://water</uri>
+      <pose>0 0 0 0 -0 0</pose>
+    </include>
+
+    <plugin name='underwater_current_plugin' filename='libuuv_underwater_current_ros_plugin.so'>
+      <namespace>hydrodynamics</namespace>
+      <constant_current>
+        <topic>current_velocity</topic>
+        <velocity>
+          <mean>0</mean>
+          <min>0</min>
+          <max>5</max>
+          <mu>0.0</mu>
+          <noiseAmp>0.0</noiseAmp>
+        </velocity>
+        <horizontal_angle>
+          <mean>0</mean>
+          <min>-3.141592653589793238</min>
+          <max>3.141592653589793238</max>
+          <mu>0.0</mu>
+          <noiseAmp>0.0</noiseAmp>
+        </horizontal_angle>
+        <vertical_angle>
+          <mean>0</mean>
+          <min>-3.141592653589793238</min>
+          <max>3.141592653589793238</max>
+          <mu>0.0</mu>
+          <noiseAmp>0.0</noiseAmp>
+        </vertical_angle>
+      </constant_current>
+    </plugin>  
 
   </world>
 </sdf>
