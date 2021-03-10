@@ -38,6 +38,12 @@
       <pose>10.1807 9.39456 -3.5 0 -0 1.55785</pose>
     </include>
 
+    <!-- House_4 -->
+    <include>
+      <uri>model://house_1</uri>
+      <pose>-10.1807 8 -3.5 0 -0 1.55785</pose>
+    </include>
+
     <!-- Oaktree 1 -->
     <include>
       <uri>model://oak_tree</uri>

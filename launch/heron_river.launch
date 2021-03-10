@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 
 <launch>
-  <arg name="config" default="base" />
-  <arg name="x"     default="-10"/>
-  <arg name="y"     default="10"/>
+  <arg name="config" default="front_laser" />
+  <arg name="x"     default="-8"/>
+  <arg name="y"     default="15"/>
   <arg name="z"     default="0.5"/>
   <arg name="yaw"   default="0"/>
 
