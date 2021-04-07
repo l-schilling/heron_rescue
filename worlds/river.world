@@ -56,7 +56,21 @@
       <uri>model://oak_tree</uri>
       <name>oak_tree_2</name>
       <pose>4.15657 19.7119 0 0 -1.5218 0</pose>
-    </include>  
+    </include>
+
+    <!-- Oaktree 3 -->
+    <include>
+      <uri>model://oak_tree</uri>
+      <name>oak_tree_3</name>
+      <pose>0 13 0 1.9 -1.52 0</pose>
+    </include>   
+
+    <!-- Oaktree 4 -->
+    <include>
+      <uri>model://oak_tree</uri>
+      <name>oak_tree_4</name>
+      <pose>0 -2 0 1.9 -1.52 0</pose>
+    </include>    
 
     <include>
       <uri>model://water</uri>
