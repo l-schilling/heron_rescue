@@ -43,7 +43,7 @@
     <arg name="config" value="$(arg config)" />
   </include>
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find heron_rescue)/rviz/heron.rviz" />
+  <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find heron_rescue)/rviz/heron.rviz" /-->
 
 
 </launch>
