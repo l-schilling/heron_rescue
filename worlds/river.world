@@ -2,11 +2,11 @@
   <world name='river_world'>
 
 
-    
+
     <!-- Global light source -->
     <include>
       <uri>model://sun</uri>
-    </include> 
+    </include>
 
     <!-- Heightmap -->
     <include>
@@ -49,7 +49,7 @@
       <uri>model://oak_tree</uri>
       <name>oak_tree_1</name>
       <pose>4.15657 -19.8045 0 0 -1.5218 0</pose>
-    </include>  
+    </include>
 
     <!-- Oaktree 2 -->
     <include>
@@ -63,47 +63,19 @@
       <uri>model://oak_tree</uri>
       <name>oak_tree_3</name>
       <pose>0 13 0 1.9 -1.52 0</pose>
-    </include>   
+    </include>
 
     <!-- Oaktree 4 -->
     <include>
       <uri>model://oak_tree</uri>
       <name>oak_tree_4</name>
       <pose>0 -2 0 1.9 -1.52 0</pose>
-    </include>    
+    </include>
 
     <include>
       <uri>model://water</uri>
       <pose>0 0 0 0 -0 0</pose>
-    </include>
-
-    <plugin name='underwater_current_plugin' filename='libuuv_underwater_current_ros_plugin.so'>
-      <namespace>hydrodynamics</namespace>
-      <constant_current>
-        <topic>current_velocity</topic>
-        <velocity>
-          <mean>0</mean>
-          <min>0</min>
-          <max>5</max>
-          <mu>0.0</mu>
-          <noiseAmp>0.0</noiseAmp>
-        </velocity>
-        <horizontal_angle>
-          <mean>0</mean>
-          <min>-3.141592653589793238</min>
-          <max>3.141592653589793238</max>
-          <mu>0.0</mu>
-          <noiseAmp>0.0</noiseAmp>
-        </horizontal_angle>
-        <vertical_angle>
-          <mean>0</mean>
-          <min>-3.141592653589793238</min>
-          <max>3.141592653589793238</max>
-          <mu>0.0</mu>
-          <noiseAmp>0.0</noiseAmp>
-        </vertical_angle>
-      </constant_current>
-    </plugin>  
+    </include> 
 
   </world>
 </sdf>
